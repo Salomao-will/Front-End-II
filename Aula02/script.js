@@ -6,7 +6,7 @@ let placar = {
 }
 
 function obterEscolhaUsuario() {
-  let escolha = parseInt(prompt('1-Pedra, 2-Papel, 3-Tesoura'))
+  let escolha = parseInt(prompt('1 - Pedra, 2 - Papel, 3 - Tesoura'))
 
   if (escolha > 0 && escolha < 4) {
     escolhaUsuario = escolha

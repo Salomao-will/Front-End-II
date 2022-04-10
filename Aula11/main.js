@@ -1,13 +1,29 @@
-//localStorage.setItem('nomeUsuario', 'Salomão Santos')
+const inputNameReference = document.querySelector('#input-name')
+const inputPasswordReference = document.querySelector('#input-password')
+const btnEnviarReference = document.querySelector('#btnLogar')
+const inputNomeMensagemErroReference = document.querySelector(
+  '#inputNomeMensagemErro'
+)
+const inputSenhaMensagemErroReference = document.querySelector(
+  '#inputSenhaMensagemErro'
+)
 
-let botaoLoogar = document.querySelector('#logar')
+btnEnviarReference.addEventListener('click', function (e) {
+  e.preventDefault()
 
-botaoLoogar.addEventListener('click', function (event) {
-  let inputNomeUsuario = document.querySelector('input')
+  if (inputNameReference.checkValidity()) {
+    inputNameReference.classList.remove('campo-invalido')
+    inputNomeMensagemErroReference.classList.remove('show')
+  } else {
+    inputNameReference.classList.add('campo-invalido')
+    inputNomeMensagemErroReference.classList.add('show')
+  }
 
-  localStorage.setItem('nomeUsuario', inputNomeUsuario.value)
-
-  localStorage.setItem('idadeUsuario', 25)
-
-  window.location.href = 'home.html'
+  if (inputPasswordReference.checkValidity()) {
+    inputPasswordReference.classList.remove('campo-invalido')
+    inputSenhaMensagemErroReference.classList.remove('show')
+  } else {
+    inputPasswordReference.classList.add('campo-invalido')
+    inputSenhaMensagemErroReference.classList.add('show')
+  }
 })
